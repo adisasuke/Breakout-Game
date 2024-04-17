@@ -1,18 +1,21 @@
-#ifndef BACKGROUND_h
-#define BACKGROUND_h
+#ifndef BALL_H
+#define BALL_H
+
 #include<SFML/Graphics.hpp>
 #include"entity.h"
 
-
-class background : public entity{
+class ball : public moving_entity{
     private:
     static sf::Texture texture;
+
     public:
-    background(float x,float y);
+    ball(float height,float width);
     void update() override;
     void draw(sf::RenderWindow &window) override;
 
-
 };
+
+
+
 
 #endif
