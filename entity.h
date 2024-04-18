@@ -21,7 +21,10 @@ class entity{
     //center of the a sprite
     sf::Vector2f get_center();
     
- 
+    float left();
+    float right();
+    float top();
+    float bottom();
 
 
     float x();
@@ -36,6 +39,13 @@ class moving_entity :public entity{
 
  protected:
  sf::Vector2f velocity;
+
+ public:
+ virtual void move_left() = 0;
+ virtual void move_right() = 0;
+ virtual void move_up() = 0;
+ virtual void move_down() = 0;
+
 
 };
 

@@ -4,6 +4,28 @@
 
 sf::Texture paddle::texture;
 
+void paddle::move_up()
+{
+    
+}
+
+void paddle::move_down()
+{
+
+}
+
+
+void paddle::move_left()
+{
+    velocity.x = -constants::paddle_speed;
+}
+
+void paddle::move_right()
+{
+    velocity.x = constants::paddle_speed;
+}
+
+
 paddle::paddle(float x,float y){
 
     if(!texture.loadFromFile("./paddle.png")){

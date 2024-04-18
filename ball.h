@@ -13,6 +13,11 @@ class ball : public moving_entity{
     void update() override;
     void draw(sf::RenderWindow &window) override;
 
+    void move_up() override;
+    void move_down() override;
+    void move_left() override;
+    void move_right() override;
+
 };
 
 

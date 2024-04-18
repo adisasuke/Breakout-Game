@@ -5,6 +5,35 @@
 
 sf::Texture ball::texture;
 
+
+
+void ball::move_up()
+{
+    velocity.y = -constants::ball_speed;
+}
+
+
+void ball::move_down()
+{
+    velocity.y = constants::ball_speed;
+}
+
+
+void ball::move_left()
+{
+    velocity.x = -constants::ball_speed;
+}
+
+void ball::move_right()
+{
+    velocity.x = constants::ball_speed;
+}
+
+
+
+
+
+
 ball::ball(float x,float y)
 {
     velocity = {constants::ball_speed,constants::ball_speed};
