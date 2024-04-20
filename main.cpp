@@ -5,6 +5,8 @@
 #include "ball.h"
 #include "paddle.h"
 #include "brick.h"
+#include "interaction.h"
+
 
 int main()
 {   
@@ -45,14 +47,17 @@ int main()
         b.update();
         p.update();
  
+         for(auto b:bricks)
+        {
+            b.update();
+        }
+
+        handleCollision(b,p);
+
         bg.draw(window);
         b.draw(window);
         p.draw(window);
 
-        for(auto b:bricks)
-        {
-            b.update();
-        }
 
         for(auto b:bricks)
         {
