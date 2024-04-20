@@ -47,12 +47,21 @@ int main()
         b.update();
         p.update();
  
-         for(auto b:bricks)
+         for(auto &b:bricks)
         {
             b.update();
         }
 
         handleCollision(b,p);
+
+        for(auto &br:bricks)
+        {
+            handleCollision(b,br);
+        }
+
+        bricks.erase(std::remove_if(std::begin(bricks), std::end(bricks),
+        [](const brick& br) { return br.isdestroyed();}),
+        std::end(bricks));
 
         bg.draw(window);
         b.draw(window);

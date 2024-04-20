@@ -6,11 +6,14 @@
 class brick : public entity{
     private:
     static sf::Texture texture;
+    bool destroyed;
 
     public:
     brick(float x,float y);
     void update() override;
     void draw(sf::RenderWindow &window) override;
+    bool isdestroyed() const;
+    void destroy();
 
 };
 
