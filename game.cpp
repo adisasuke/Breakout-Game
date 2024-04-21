@@ -51,7 +51,7 @@ void game::run()
             window.close();
 
         //use p to pause/unpause the game
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::p))
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))
         {
             if(!pauseactive)
             {
@@ -86,9 +86,17 @@ void game::run()
                 handleCollision(b,br);
             }
 
+            for(auto &b:bricks)
+            {
+                b.update();
+            }
+            
             bricks.erase(std::remove_if(std::begin(bricks), std::end(bricks),
             [](const brick& br) { return br.isdestroyed();}),
             std::end(bricks));
+
+            if(bricks.size()==0)
+                window.close();
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))

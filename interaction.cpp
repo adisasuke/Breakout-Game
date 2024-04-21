@@ -30,8 +30,10 @@ void handleCollision(ball& b,brick &br){
 
     if(isInteraction(b,br))
     {
+        br.weaken();
 
-        br.destroy();
+        if(br.is_weaken())
+            br.destroy();
 
         float left_overlap = b.right() - br.left();
         float right_overlap = br.right() - b.left();
